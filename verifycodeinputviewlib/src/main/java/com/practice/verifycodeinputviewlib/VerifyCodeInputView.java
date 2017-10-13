@@ -20,9 +20,9 @@ import java.util.List;
  * Created by zhuyakun on 2017/10/11.
  */
 
-public class VerifyCodeInputView extends FrameLayout implements View.OnFocusChangeListener, View.OnKeyListener {
+public class VerifyCodeInputView extends FrameLayout implements View.OnFocusChangeListener, VerifyCodeEditText.KeyboardListener {
     public static final String TAG = VerifyCodeInputView.class.getSimpleName();
-    List<EditText> vcEtList;
+    List<VerifyCodeEditText> vcEtList;
     TextView vcEmptyView;
 
     public VerifyCodeInputView(Context context) {
@@ -43,20 +43,20 @@ public class VerifyCodeInputView extends FrameLayout implements View.OnFocusChan
     public void init() {
         LayoutInflater.from(getContext()).inflate(R.layout.verify_code_input_view, this, true);
         vcEtList = new LinkedList<>();
-        vcEtList.add((EditText) findViewById(R.id.vc_et0));
-        vcEtList.add((EditText) findViewById(R.id.vc_et1));
-        vcEtList.add((EditText) findViewById(R.id.vc_et2));
-        vcEtList.add((EditText) findViewById(R.id.vc_et3));
-        vcEtList.add((EditText) findViewById(R.id.vc_et4));
-        vcEtList.add((EditText) findViewById(R.id.vc_et5));
+        vcEtList.add((VerifyCodeEditText) findViewById(R.id.vc_et0));
+        vcEtList.add((VerifyCodeEditText) findViewById(R.id.vc_et1));
+        vcEtList.add((VerifyCodeEditText) findViewById(R.id.vc_et2));
+        vcEtList.add((VerifyCodeEditText) findViewById(R.id.vc_et3));
+        vcEtList.add((VerifyCodeEditText) findViewById(R.id.vc_et4));
+        vcEtList.add((VerifyCodeEditText) findViewById(R.id.vc_et5));
         vcEmptyView = (TextView) findViewById(R.id.vc_emptyView);
         initOnFocusChangeListener();
-        initOnKeyListener();
+        initKeyboardListener();
     }
 
-    private void initOnKeyListener() {
-        for (EditText editText : vcEtList) {
-            editText.setOnKeyListener(this);
+    private void initKeyboardListener() {
+        for (VerifyCodeEditText vcEditText : vcEtList) {
+            vcEditText.setKeyboardListener(this);
         }
     }
 
@@ -86,14 +86,12 @@ public class VerifyCodeInputView extends FrameLayout implements View.OnFocusChan
 
 
     @Override
-    public boolean onKey(View v, int keyCode, KeyEvent event) {
+    public boolean onKey(VerifyCodeEditText vcEditText, int keyCode, KeyEvent event) {
         for (int i = 0; i < vcEtList.size(); ++i) {
-            if (v.getId() == vcEtList.get(i).getId()) {
+            if (vcEditText.getId() == vcEtList.get(i).getId()) {
                 if (keyCode == KeyEvent.KEYCODE_BACK) return false;
                 if (event.getAction() != KeyEvent.ACTION_UP) return true;
-
-                EditText editText = (EditText) v;
-                if (TextUtils.isEmpty(editText.getText().toString())) {
+                if (TextUtils.isEmpty(vcEditText.getText().toString())) {
                     switch (keyCode) {
                         case KeyEvent.KEYCODE_0:
                         case KeyEvent.KEYCODE_1:
@@ -105,8 +103,8 @@ public class VerifyCodeInputView extends FrameLayout implements View.OnFocusChan
                         case KeyEvent.KEYCODE_7:
                         case KeyEvent.KEYCODE_8:
                         case KeyEvent.KEYCODE_9:
-                            editText.setText(Character.toString((char) event.getUnicodeChar()));
-                            editText.setSelection(editText.getText().length());
+                            vcEditText.setText(Character.toString((char) event.getUnicodeChar()));
+                            vcEditText.setSelection(vcEditText.getText().length());
                             if (i < (vcEtList.size() - 1)) {
                                 vcEtList.get(i + 1).requestFocus();
                             }
@@ -131,15 +129,15 @@ public class VerifyCodeInputView extends FrameLayout implements View.OnFocusChan
                         case KeyEvent.KEYCODE_7:
                         case KeyEvent.KEYCODE_8:
                         case KeyEvent.KEYCODE_9:
-                            editText.setText(Character.toString((char) event.getUnicodeChar()));
+                            vcEditText.setText(Character.toString((char) event.getUnicodeChar()));
                             if (i < (vcEtList.size() - 1)) {
                                 vcEtList.get(i + 1).requestFocus();
                             } else {
-                                editText.setSelection(editText.getText().length());
+                                vcEditText.setSelection(vcEditText.getText().length());
                             }
                             break;
                         case KeyEvent.KEYCODE_DEL:
-                            editText.setText("");
+                            vcEditText.setText("");
                             break;
 
                         default:

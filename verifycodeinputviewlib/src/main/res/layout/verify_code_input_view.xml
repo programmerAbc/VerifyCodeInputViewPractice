@@ -14,7 +14,7 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <EditText
+            <com.practice.verifycodeinputviewlib.VerifyCodeEditText
                 android:id="@+id/vc_et0"
                 style="@style/VerifyCodeInputViewEditTextStyle"
                  />
@@ -31,7 +31,7 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <EditText
+            <com.practice.verifycodeinputviewlib.VerifyCodeEditText
                 android:id="@+id/vc_et1"
                 style="@style/VerifyCodeInputViewEditTextStyle"
                  />
@@ -48,7 +48,7 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <EditText
+            <com.practice.verifycodeinputviewlib.VerifyCodeEditText
                 android:id="@+id/vc_et2"
                 style="@style/VerifyCodeInputViewEditTextStyle"
                  />
@@ -65,7 +65,7 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <EditText
+            <com.practice.verifycodeinputviewlib.VerifyCodeEditText
                 android:id="@+id/vc_et3"
                 style="@style/VerifyCodeInputViewEditTextStyle"
                  />
@@ -82,7 +82,7 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <EditText
+            <com.practice.verifycodeinputviewlib.VerifyCodeEditText
                 android:id="@+id/vc_et4"
                 style="@style/VerifyCodeInputViewEditTextStyle"
                  />
@@ -99,7 +99,7 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <EditText
+            <com.practice.verifycodeinputviewlib.VerifyCodeEditText
                 android:id="@+id/vc_et5"
                 style="@style/VerifyCodeInputViewEditTextStyle"
                  />

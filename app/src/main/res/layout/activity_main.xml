@@ -17,4 +17,10 @@
 
         <requestFocus />
     </EditText>
+
+    <Button
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/button_bg" />
 </LinearLayout>
