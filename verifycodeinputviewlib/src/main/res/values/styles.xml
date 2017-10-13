@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="VerifyCodeInputViewEditTextStyle">
-        <item name="android:maxLength">1</item>
+    <style name="VerifyCodeInputViewTextViewStyle">
         <item name="android:gravity">center</item>
         <item name="android:textSize">15sp</item>
-        <item name="android:inputType">number</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">0dp</item>
         <item name="android:layout_weight">1</item>
+        <item name="android:textColor">#909090</item>
         <item name="android:background">@android:color/transparent</item>
     </style>
 
-    <style name="VerifyCodeInputViewEditTextUnderlineStyle">
+    <style name="VerifyCodeInputViewTextViewUnderlineStyle">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">1dp</item>
-        <item name="android:background">#909090</item>
+        <item name="android:background">@drawable/verify_code_input_view_underline_bg</item>
     </style>
 </resources>

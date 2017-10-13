@@ -4,7 +4,7 @@
     android:layout_height="wrap_content">
 
     <LinearLayout
-        android:id="@+id/inputGrid"
+        android:id="@+id/vc_showGrid"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
         android:orientation="horizontal">
@@ -14,12 +14,13 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <com.practice.verifycodeinputviewlib.VerifyCodeEditText
-                android:id="@+id/vc_et0"
-                style="@style/VerifyCodeInputViewEditTextStyle"
-                 />
+            <TextView
+                android:id="@+id/vc_tv0"
+                style="@style/VerifyCodeInputViewTextViewStyle" />
 
-            <View style="@style/VerifyCodeInputViewEditTextUnderlineStyle" />
+            <View
+                android:id="@+id/vc_ul0"
+                style="@style/VerifyCodeInputViewTextViewUnderlineStyle" />
         </LinearLayout>
 
         <Space
@@ -31,12 +32,13 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <com.practice.verifycodeinputviewlib.VerifyCodeEditText
-                android:id="@+id/vc_et1"
-                style="@style/VerifyCodeInputViewEditTextStyle"
-                 />
+            <TextView
+                android:id="@+id/vc_tv1"
+                style="@style/VerifyCodeInputViewTextViewStyle" />
 
-            <View style="@style/VerifyCodeInputViewEditTextUnderlineStyle" />
+            <View
+                android:id="@+id/vc_ul1"
+                style="@style/VerifyCodeInputViewTextViewUnderlineStyle" />
         </LinearLayout>
 
         <Space
@@ -48,12 +50,13 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <com.practice.verifycodeinputviewlib.VerifyCodeEditText
-                android:id="@+id/vc_et2"
-                style="@style/VerifyCodeInputViewEditTextStyle"
-                 />
+            <TextView
+                android:id="@+id/vc_tv2"
+                style="@style/VerifyCodeInputViewTextViewStyle" />
 
-            <View style="@style/VerifyCodeInputViewEditTextUnderlineStyle" />
+            <View
+                android:id="@+id/vc_ul2"
+                style="@style/VerifyCodeInputViewTextViewUnderlineStyle" />
         </LinearLayout>
 
         <Space
@@ -65,12 +68,13 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <com.practice.verifycodeinputviewlib.VerifyCodeEditText
-                android:id="@+id/vc_et3"
-                style="@style/VerifyCodeInputViewEditTextStyle"
-                 />
+            <TextView
+                android:id="@+id/vc_tv3"
+                style="@style/VerifyCodeInputViewTextViewStyle" />
 
-            <View style="@style/VerifyCodeInputViewEditTextUnderlineStyle" />
+            <View
+                android:id="@+id/vc_ul3"
+                style="@style/VerifyCodeInputViewTextViewUnderlineStyle" />
         </LinearLayout>
 
         <Space
@@ -82,12 +86,13 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <com.practice.verifycodeinputviewlib.VerifyCodeEditText
-                android:id="@+id/vc_et4"
-                style="@style/VerifyCodeInputViewEditTextStyle"
-                 />
+            <TextView
+                android:id="@+id/vc_tv4"
+                style="@style/VerifyCodeInputViewTextViewStyle" />
 
-            <View style="@style/VerifyCodeInputViewEditTextUnderlineStyle" />
+            <View
+                android:id="@+id/vc_ul4"
+                style="@style/VerifyCodeInputViewTextViewUnderlineStyle" />
         </LinearLayout>
 
         <Space
@@ -99,26 +104,30 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <com.practice.verifycodeinputviewlib.VerifyCodeEditText
-                android:id="@+id/vc_et5"
-                style="@style/VerifyCodeInputViewEditTextStyle"
-                 />
+            <EditText
+                android:id="@+id/vc_tv5"
+                style="@style/VerifyCodeInputViewTextViewStyle" />
 
-            <View style="@style/VerifyCodeInputViewEditTextUnderlineStyle" />
+            <View
+                android:id="@+id/vc_ul5"
+                style="@style/VerifyCodeInputViewTextViewUnderlineStyle" />
         </LinearLayout>
 
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/vc_emptyView"
+    <EditText
+        android:id="@+id/vc_inputEt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/inputGrid"
-        android:layout_alignLeft="@+id/inputGrid"
-        android:layout_alignRight="@+id/inputGrid"
-        android:layout_alignTop="@+id/inputGrid"
-        android:gravity="center_vertical|left"
-        android:text="请输入验证码"
-        android:textSize="20sp" />
+        android:layout_alignBottom="@+id/vc_showGrid"
+        android:layout_alignLeft="@+id/vc_showGrid"
+        android:layout_alignRight="@+id/vc_showGrid"
+        android:layout_alignTop="@+id/vc_showGrid"
+        android:background="@android:color/transparent"
+        android:cursorVisible="false"
+        android:hint="请输入验证码"
+        android:inputType="number"
+        android:maxLength="6"
+        android:textColor="@android:color/transparent" />
 
 </RelativeLayout>
