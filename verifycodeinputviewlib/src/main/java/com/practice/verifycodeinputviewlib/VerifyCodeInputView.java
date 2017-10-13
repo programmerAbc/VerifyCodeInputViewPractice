@@ -83,7 +83,7 @@ public class VerifyCodeInputView extends FrameLayout {
                 } else {
                     resetUnderLine();
                 }
-                vcInputEt.setHintTextColor(hasFocus?0x00000000:0xff909090);
+                vcInputEt.setHintTextColor(hasFocus ? 0x00000000 : 0xff909090);
             }
         });
         resetUnderLine();
@@ -126,5 +126,9 @@ public class VerifyCodeInputView extends FrameLayout {
         } else {
             vcUlList.get(vcUlList.size() - 1).setEnabled(true);
         }
+    }
+
+    public String getVerifyCode() {
+        return vcInputEt.getText().toString();
     }
 }
