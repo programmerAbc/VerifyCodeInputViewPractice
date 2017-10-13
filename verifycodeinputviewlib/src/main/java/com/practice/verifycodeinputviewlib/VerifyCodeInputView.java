@@ -83,6 +83,7 @@ public class VerifyCodeInputView extends FrameLayout {
                 } else {
                     resetUnderLine();
                 }
+                vcInputEt.setHintTextColor(hasFocus?0x00000000:0xff909090);
             }
         });
         resetUnderLine();
